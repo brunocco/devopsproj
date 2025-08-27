@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    container_name: task-backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - backend-data:/app/data  # mantém apenas os dados, não sobrescreve node_modules
+    working_dir: /app
+    command: sh -c "npm install && npm start" # garante instalação das dependências
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: task-frontend
+    ports:
+      - "8080:80"
+    restart: always
+    depends_on:
+      - backend
+
+volumes:
+  backend-data:
+

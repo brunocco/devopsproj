@@ -1,0 +1,22 @@
+# Node modules
+backend/node_modules/
+
+# SQLite database
+backend/database.sqlite
+backend/db/
+backend/data/
+
+# Logs
+*.log
+
+# Docker build artifacts
+frontend/node_modules/
+*.env
+*.DS_Store
+
+# Imagens e containers locais (se tiver)
+docker-compose.override.yml
+
+# Mac/Linux system files
+*.swp
+*.swo
