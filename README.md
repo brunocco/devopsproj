@@ -17,6 +17,13 @@ Este projeto agregou conhecimento em:
 
 ---
 
+## 📝 Arquitetura visual do projeto
+![Diagrama de Arquitetura](./img/0.png)
+
+
+
+---
+
 ## 🛠️ Serviços Utilizados
 - **AWS EC2** (Ubuntu Server 22.04 LTS)  
 - **Docker & Docker Compose**  
@@ -137,7 +144,7 @@ sudo apt install docker-compose -y
 Clonando o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/devopsproj.git
+git clone https://github.com/brunocco/devopsproj.git
 cd devopsproj
 ```
 
@@ -195,7 +202,20 @@ Este projeto reforçou conceitos de DevOps e Observabilidade, como:
 
 ## 🖼️ Extras (Prints do Dashboard)
 
-Aqui você pode inserir screenshots dos gráficos do Datadog mostrando CPU, memória e containers rodando.
+## 1. Conteiners criados e rodando
+![Diagrama de Arquitetura](./img/1.png)
+
+## 2. Agente Datadog Rodando coletando metricas de CPU e Memória da EC2
+![Diagrama de Arquitetura](./img/2.png)
+
+## 3. Dashboard na Plataforma Datadog da CPU e Memória dos conteires Front e Back
+![Diagrama de Arquitetura](./img/3.png)
+
+## 4. Dashboard das metricas CPU total do Host, CPU do User Host, Tempo ocioso da CPU Host e Memória usada pelos conteiners
+![Diagrama de Arquitetura](./img/4.png)
+
+## 5. Dashboard das metricas Disco usado no host e Espaço livre no disco.
+![Diagrama de Arquitetura](./img/4.png)
 
 ---
 
@@ -211,24 +231,7 @@ Aqui você pode inserir screenshots dos gráficos do Datadog mostrando CPU, mem�
 ## 👤 Autor
 
 - Feito por: **Bruno Cesar**  
-- LinkedIn: [linkedin.com/in/seu-usuario](https://linkedin.com/in/seu-usuario)  
+- LinkedIn: [linkedin.com/in/seu-usuario](https://www.linkedin.com/in/bruno-cesar-704265223/))  
 - Página do Projeto: [GitHub Repo](https://github.com/seu-usuario/devopsproj)  
 
----
-
-## 📌 Arquitetura do Projeto
-
-```mermaid
-graph TD
-    User[👤 Usuário] -->|HTTP :8080| Frontend[🖥️ Container Frontend]
-    Frontend -->|API :3000| Backend[⚙️ Container Backend + SQLite]
-    Backend --> DB[(💾 SQLite Local)]
-
-    subgraph EC2[🖥️ AWS EC2 Instance]
-        Frontend
-        Backend
-        Agent[📡 Datadog Agent]
-    end
-
-    Agent -->|Métricas| Datadog[☁️ Datadog Cloud]
 ```
