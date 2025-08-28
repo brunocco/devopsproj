@@ -233,7 +233,7 @@ Este projeto reforçou conceitos de DevOps e Observabilidade, como:
 ## 👤 Autor
 
 - Feito por: **Bruno Cesar**  
-- LinkedIn: [acesse-aqui](https://www.linkedin.com/in/bruno-cesar-704265223/) 
+- LinkedIn: [Acesse aqui](https://www.linkedin.com/in/bruno-cesar-704265223/) 
 - Página do Projeto: [Meu Repositorio](https://medium.com/@brunosherlocked/projeto-devops-e-observabilidade-com-docker-aws-ec2-e-datadog-1b3dc6c6a19f)  
 
 ```
