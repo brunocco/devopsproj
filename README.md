@@ -96,7 +96,7 @@ Deixar padrão (**All traffic** permitido).
 ### 🔹 Storage: 
 Manter configuração padrão de 8GB (pode ajustar se necessário).
 
-4. Clique em **Launch Instance**.
+- Clique em **Launch Instance**.
 
 ---
 
@@ -172,6 +172,8 @@ docker run -d --name dd-agent   -e DD_API_KEY=SEU_API_KEY   -e DD_SITE="us5.data
 Após instalar o agente, as métricas podem ser acessadas no Dashboard do Datadog:
 - Menu **Metrics Explorer** → buscar métricas.  
 - Menu **Infrastructure** → visualizar containers e host.  
+
+📌 Obs: Aguarde em terno de 5 minutos para ficar mais visual os deshboards.
 
 ### 🔎 Métricas monitoradas neste projeto:
 
