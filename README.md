@@ -1,3 +1,119 @@
+# Projeto DevOps: Deploy de Aplicação Full Stack em EC2 com Docker e Monitoramento Datadog
+
+![Banner](https://raw.githubusercontent.com/seuusuario/seurepositorio/main/banner.png)  
+*Projeto de infraestrutura, containers e observabilidade usando AWS EC2, Docker e Datadog.*
+
+---
+
+## 📝 Descrição do Projeto
+
+Este projeto tem como objetivo demonstrar habilidades práticas de **DevOps**, **observabilidade** e **deploy de aplicações em containers**, utilizando:
+
+- AWS EC2
+- Docker & Docker Compose
+- Datadog (Agente 6 para host, Agente 7 para containers)
+- SQLite embutido localmente
+- Frontend e Backend em containers
+
+O projeto permitiu:
+
+- Deploy de aplicação Full Stack (frontend + backend) em containers.
+- Monitoramento completo da infraestrutura e containers.
+- Coleta de métricas de CPU, memória e disco tanto do host quanto dos containers.
+
+---
+
+## 💡 Tecnologias Utilizadas
+
+| Camada | Tecnologias |
+|--------|-------------|
+| Infraestrutura | AWS EC2, Security Groups, SSH |
+| Containers | Docker, Docker Compose |
+| Backend | Node.js / Python Flask (com SQLite) |
+| Frontend | React / Nginx |
+| Observabilidade | Datadog Agent 6 & 7, métricas de CPU, memória e disco |
+| Versionamento | Git |
+
+---
+
+## 🚀 Passo a Passo do Projeto
+
+### 1. Criação da EC2
+- Criar instância EC2 Ubuntu 24.04.
+- Configurar Security Group com portas 22 (SSH), 80 (HTTP), 3000 (Backend).
+- Conectar via **Instance Connect** ou SSH.
+
+---
+
+### 2. Preparação do Servidor
+
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install docker.io -y
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo apt install docker-compose -y
+
+
+
+
+# Projeto DevOps: Deploy de Aplicação Full Stack em EC2 com Docker e Monitoramento Datadog
+
+Este projeto tem como objetivo demonstrar habilidades práticas de **DevOps**, **observabilidade** e **deploy de aplicações em containers**, utilizando **Docker**, **Docker Compose**, **AWS EC2** e **Datadog** para monitoramento.
+
+---
+
+## Descrição do Projeto
+
+O projeto consiste em:
+
+- Criação de um servidor EC2 na AWS.
+- Deploy de uma aplicação Full Stack (Frontend + Backend) usando **Docker** e **Docker Compose**.
+- Uso do **SQLite** embutido localmente para o backend.
+- Configuração de monitoramento da infraestrutura e containers usando **Datadog Agent**.
+- Coleta de métricas de CPU, memória e disco tanto do host quanto dos containers.
+
+Este projeto foi essencial para testar e validar conhecimentos de **infraestrutura como código, deploy em containers, monitoramento de métricas, troubleshooting e observabilidade**.
+
+---
+
+## Tecnologias Utilizadas
+
+- AWS EC2
+- Docker
+- Docker Compose
+- Datadog (Agente 6 e Agente 7)
+- SQLite (local, embutido no backend)
+- Frontend (ex.: Nginx ou React)
+- Backend (ex.: Node.js ou Python Flask)
+- Git
+
+---
+
+## Passo a Passo do Projeto
+
+### 1. Criação da EC2
+- Criação de uma instância EC2 na AWS com Ubuntu 24.04.
+- Configuração de **Security Group** permitindo portas 22 (SSH), 80 e 3000 (HTTP e Backend).
+- Acesso via **Instance Connect** ou SSH.
+
+### 2. Preparação do Servidor
+```bash
+# Atualização do servidor
+sudo apt update && sudo apt upgrade -y
+
+# Instalação do Docker
+sudo apt install docker.io -y
+sudo systemctl enable docker
+sudo systemctl start docker
+
+# Instalação do Docker Compose
+sudo apt install docker-compose -y
+
+
+
+
+
 # Projeto DevOps com Docker, EC2 e Datadog
 
 ## Descrição do Projeto
@@ -107,5 +223,37 @@ Este projeto foi fundamental para:
 
 ---
 
+
+👉 Isso renderiza um diagrama direto no GitHub, mostrando **usuário → frontend → backend → EC2 → Datadog**.
+
+---
+
+## 🔹 Exemplo visual (para Draw.io ou Lucidchart)
+Se quiser fazer bonitão com ícones oficiais da AWS:
+- Baixe o [AWS Architecture Icons](https://aws.amazon.com/architecture/icons/).
+- Use **EC2** para a instância, **Containers** para frontend/backend, **Datadog logo** para monitoramento.
+- Conecte com setas mostrando tráfego e métricas.
+
+---
+
+👉 Quer que eu já monte esse **Mermaid pronto e renderizado** para você colar no README, ou prefere um **.drawio** editável que você abre e ajusta visualmente?
+
+
 *Este README foi elaborado para documentação completa do projeto DevOps com foco em observabilidade e monitoramento.*
+
+
+```mermaid
+graph TD
+    User[👤 Usuário] -->|HTTP :8080| Frontend[🖥️ Container Frontend]
+    Frontend -->|API :3000| Backend[⚙️ Container Backend + SQLite]
+    Backend --> DB[(💾 SQLite Local)]
+
+    subgraph EC2[🖥️ AWS EC2 Instance]
+        Frontend
+        Backend
+        Agent[📡 Datadog Agent]
+    end
+
+    Agent -->|Métricas| Datadog[☁️ Datadog Cloud]
+
 
